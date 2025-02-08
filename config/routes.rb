@@ -10,4 +10,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  resources :chat_rooms do
+    resources :messages
+  end
+
+  # Optionally, you can add a root route
+  root 'chat_rooms#index'
 end
